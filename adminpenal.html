@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Panel - Portfolio Settings</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            display: flex;
+            min-height: 100vh;
+            flex-direction: column;
+        }
+        .wrapper {
+            display: flex;
+            width: 100%;
+        }
+        .sidebar {
+            width: 250px;
+            background-color: #343a40;
+            padding: 15px;
+            height: 100vh;
+            position: fixed;
+        }
+        .sidebar a {
+            color: #fff;
+            text-decoration: none;
+            display: block;
+            padding: 10px 0;
+            margin-bottom: 10px;
+            border-radius: 4px;
+            transition: background-color 0.2s ease;
+        }
+        .sidebar a:hover {
+            background-color: #495057;
+        }
+        .main-content {
+            margin-left: 250px;
+            padding: 20px;
+            width: calc(100% - 250px);
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Wrapper -->
+    <div class="wrapper">
+        <!-- Sidebar -->
+        <nav class="sidebar">
+            <h4 class="text-white">Admin Panel</h4>
+            <a href="#dashboard">Dashboard</a>
+            <a href="#projects">Projects</a>
+            <a href="#settings">Settings</a>
+            <a href="#profile">Profile</a>
+        </nav>
+
+        <!-- Main Content -->
+        <div class="main-content">
+            <h2 id="settings" class="mb-4">Portfolio Settings</h2>
+
+            <!-- Settings form -->
+            <form action="/save-settings" method="POST" enctype="multipart/form-data">
+                <!-- Name -->
+                <div class="mb-3">
+                    <label for="name" class="form-label">Name</label>
+                    <input type="text" class="form-control" id="name" name="name" placeholder="Enter your name" required>
+                </div>
+
+                
+            
+                <!-- Post 1 -->
+                <div class="mb-3">
+                    <label for="post1" class="form-label">Post 1</label>
+                    <input type="text" class="form-control" id="post1" name="post1" placeholder="Enter your first post title" required>
+                </div>
+            
+                <!-- Post 2 -->
+                <div class="mb-3">
+                    <label for="post2" class="form-label">Post 2</label>
+                    <input type="text" class="form-control" id="post2" name="post2" placeholder="Enter your second post title">
+                </div>
+            
+                <!-- Post Description -->
+                <div class="mb-3">
+                    <label for="postDescription" class="form-label">Post Description</label>
+                    <textarea class="form-control" id="postDescription" name="postDescription" rows="3" placeholder="Describe your posts" required></textarea>
+                </div>
+            
+                <!-- Profile Image -->
+                <div class="mb-3">
+                    <label for="profileImage" class="form-label">Profile Image</label>
+                    <input type="file" class="form-control" id="profileImage" name="profileImage" accept="image/*">
+                </div>
+            
+                <!-- Instagram Link -->
+                <div class="mb-3">
+                    <label for="instagramLink" class="form-label">Instagram Link</label>
+                    <input type="url" class="form-control" id="instagramLink" name="instagramLink" placeholder="Enter your Instagram URL">
+                </div>
+            
+                <!-- GitHub Link -->
+                <div class="mb-3">
+                    <label for="githubLink" class="form-label">GitHub Link</label>
+                    <input type="url" class="form-control" id="githubLink" name="githubLink" placeholder="Enter your GitHub URL">
+                </div>
+            
+                <!-- Years of Experience -->
+                <div class="mb-3">
+                    <label for="yearsExperience" class="form-label">Years of Experience</label>
+                    <input type="number" class="form-control" id="yearsExperience" name="yearsExperience" placeholder="Enter years of experience" required>
+                </div>
+            
+                <!-- Projects Completed -->
+                <div class="mb-3">
+                    <label for="projectsCompleted" class="form-label">Projects Completed</label>
+                    <input type="number" class="form-control" id="projectsCompleted" name="projectsCompleted" placeholder="Enter number of projects completed" required>
+                </div>
+            
+                <!-- Happy Clients -->
+                <div class="mb-3">
+                    <label for="happyClients" class="form-label">Happy Clients</label>
+                    <input type="number" class="form-control" id="happyClients" name="happyClients" placeholder="Enter number of happy clients" required>
+                </div>
+            
+                <!-- Save Button -->
+                <button type="submit" class="btn btn-primary">Save Settings</button>
+            </form>
+            
+        </div>
+    </div>
+
+    <!-- Bootstrap JS (Optional) -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
